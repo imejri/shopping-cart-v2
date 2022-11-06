@@ -20,4 +20,5 @@ environment { APP_NAMESPACE = 'recover' }
                 """
             } // steps
         } // stage
+    } // stages
 } // pipeline
