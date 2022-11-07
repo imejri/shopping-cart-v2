@@ -20,5 +20,19 @@ environment { APP_NAMESPACE = 'recover' }
                 """
             } // steps
         } // stage
+        
+        stage('Deploy') {
+            environment { QUAY = credentials('QUAY_USER') }
+            steps {
+                script {
+                    def status = sh(
+                        script: "./scripts/tag-exists-in-quay.sh $QUAY_USR/do400-recover latest",
+                        returnStatus: true)
+                    if (status != 0) {
+                            error("Tag not found in Quay!")
+                    } // if
+                } // script
+            } // steps
+        } // stage
     } // stages
 } // pipeline

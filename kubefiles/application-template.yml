@@ -25,6 +25,8 @@ objects:
               imagePullPolicy: Always
               ports:
                 - containerPort: 8080
+          imagePullSecrets:
+            - name: quay-pull-secret    
   - kind: Service
     apiVersion: v1
     metadata:
