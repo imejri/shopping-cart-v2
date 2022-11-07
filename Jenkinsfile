@@ -38,7 +38,7 @@ parameters {
                             if (status != 0) {
                                 error("Tag not found in Quay!")
                             } //if
-                            TAG_TO_DEPLOY = ${params.DEPLOY_TAG}
+                            TAG_TO_DEPLOY = params.DEPLOY_TAG
                         } // if
                     sh """
                         ./scripts/deploy-image.sh \
