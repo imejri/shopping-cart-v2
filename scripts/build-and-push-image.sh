@@ -17,5 +17,5 @@ done
   -Dquarkus.container-image.name=do400-recover \
   -Dquarkus.container-image.username="${quay_user}" \
   -Dquarkus.container-image.password="${quay_password}" \
-  -Dquarkus.container-image.additional-tags="${build_number}" \
+  -Dquarkus.container-image.additional-tags="latest" \
   -Dquarkus.container-image.push=true
